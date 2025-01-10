@@ -5,6 +5,14 @@ import main.Materia.Models.Node;
 public class ArbolBinario{
     private Node root;
 
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
+
     public void insert(int value){
         root = insert(root, value);
     }
@@ -45,9 +53,6 @@ public class ArbolBinario{
         }
     }
 
-    private Node getRoot(){
 
-    }
-        
 
 }
