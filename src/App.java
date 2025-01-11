@@ -45,11 +45,20 @@ public class App {
             arbolBinario.insert(valores[i]);
         }
         
-        arbolBinario.printTree();
-        List<List<Node>> lista = levels.listLevels(arbolBinario.getRoot());
         System.out.println("Input: ");
-        System.out.println(lista);
-        System.out.println("Output: ");
+        arbolBinario.printTree();
 
+        List<List<Node>> lista = levels.listLevels(arbolBinario.getRoot());
+        
+        System.out.println("Output: ");
+        for(List<Node> nivel : lista){
+            for (int i = 0; i < nivel.size(); i++) {
+                System.out.print(nivel.get(i).getValue());
+                if(i < nivel.size() - 1){
+                    System.out.print(" -> ");
+                }
+            }
+            System.out.println();
+        }  
     }
 }
