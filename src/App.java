@@ -7,14 +7,16 @@ import main.Ejercicio_03_listLevels.ListLevels;
 import main.Ejercicio_04_depth.Depth;
 import main.Materia.Controllers.*;
 import main.Materia.Models.Node;
+import main.Materia.Models.NodeG;
 
 public class App {
     public static void main(String[] args) throws Exception {
        //runArbolBinario();
        //runArbolAVL();
+       runGraph();
 
        //DEBER:
-       runEjercicio1();
+       //runEjercicio1();
        //runEjercicio2();
        //runEjercicio3();
        //runEjercicio4();
@@ -160,5 +162,26 @@ public class App {
 
         System.out.println("\nRecorrido inOrder Recursivo: ");
         arbolRecorridos.inOrderRecursivo(arbolBinario.getRoot());
+    }
+
+    public static void runGraph(){
+        Graph grafo = new Graph();
+
+        NodeG cinco = grafo.addNode(5);
+        NodeG siete = grafo.addNode(7);
+        NodeG nueve = grafo.addNode(9);
+        NodeG once = grafo.addNode(11);
+        NodeG tres = grafo.addNode(3);
+
+        grafo.addEdge(cinco, siete);
+        grafo.addEdge(cinco, nueve);
+        grafo.addEdge(cinco, tres);
+        grafo.addEdge(siete, nueve);
+        grafo.addEdge(nueve, tres);
+        grafo.addEdge(tres, once);
+        
+
+        grafo.printGraph();
+
     }
 }
