@@ -6,6 +6,10 @@ import java.util.List;
 public class NodeG {
 
     private int value;
+    public void setValue(int value) {
+        this.value = value;
+    }
+
     private List <NodeG> neighbors;
 
     public NodeG (int value){
